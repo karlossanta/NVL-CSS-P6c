@@ -42,13 +42,18 @@
                 height: 100%;
                 width: 100%;
             }
-            
+            /* Añadimos un borde en las partes superior e inferior del <span> */
+            span {
+                border-bottom: purple solid 2px;
+                border-top: purple solid 2px;
+            }
+
             #receta {
                 position: relative;
                 z-index: 0;
             }
             /* Posicionamos el texto relativo a la imagen, superpuesto (z-index) y con un ligero fondo blanco
-                además le aádimos un margen en el lado derecho */
+                además le aádimos un margen en el lado derecho y un paddin (margen interior) */
             #textoReceta {
                 position: absolute;
                 bottom: 10px;
@@ -57,6 +62,7 @@
                 background-color: white;
                 opacity: 0.6;
                 margin-right: 30%;
+                padding: 10px;
             }
             /* Incluimos 3 columnas con una separación entre ellas de 30px */
             .columnas {
@@ -68,10 +74,11 @@
                 font: bold small-caps 3em fantasy;
             }
             /* Ahora vamos a darle algo de estilo al formulario */
-            form {
+            #formulario {
                 text-align: center;
             }
-            caption {
+            /* Este CSS no entiendo muy bien por qué no se aplica */
+            h3 {
                 font: bold small-caps 2em fantasy;
             }
             label {
@@ -127,8 +134,8 @@
             </div>
         </div>
         <div id="formulario">
+            <h3>¡Déjanos tu Opinión!</h3>
             <form method="post" action="miservidor.php">
-                <caption></caption>
                 <div>
                     <label for="nombre">Nombre:</label><br>
                     <input id="nombre" type="text">
