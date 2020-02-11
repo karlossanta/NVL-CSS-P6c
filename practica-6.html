@@ -67,6 +67,26 @@
             h2 {
                 font: bold small-caps 3em fantasy;
             }
+            /* Ahora vamos a darle algo de estilo al formulario */
+            form {
+                text-align: center;
+            }
+            caption {
+                font: bold small-caps 2em fantasy;
+            }
+            label {
+                font-weight: bold;
+                color: purple;
+            }
+            textarea {
+                height: 70px;
+                width: 300px;
+            }
+            [type="submit"] {
+                width: 80px;
+                color: purple;
+                font-weight: bold;
+            }
         </style>
     </head>
     <body>
@@ -106,7 +126,26 @@
                 </div>
             </div>
         </div>
-        
+        <div id="formulario">
+            <form method="post" action="miservidor.php">
+                <caption></caption>
+                <div>
+                    <label for="nombre">Nombre:</label><br>
+                    <input id="nombre" type="text">
+                </div>
+                <div>
+                    <label for="email">Correo Electrónico:</label><br>
+                    <input id="email" type="text">
+                </div>
+                <div>
+                    <label for="comentario">Comentario:</label><br>
+                    <textarea id="consulta"></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Enviar"> 
+                </div>
+            </form>
+        </div>
         
     </body>
 </html>
