@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+        <meta charset="utf-8">
+        <title>NVL-CSS-P6c</title>
+        <style>
+            /* me he inspirado en una revista con recetas de cocina que había por casa */
+            /* esta receta contenía texto destacado en morado */
+            b {
+                color: purple;
+            }
+            /* Y los puntos de la lista eran morados */
+            /* Para poner los puntos de la lista en morados, primero hay que quitar los que vienen */
+            ul {
+                list-style: none;
+            }
+            /* Y después añadir unos 'al gusto' */
+            ul li::before {
+                content: "\2022";
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+                color:purple;
+            }
+            /* y con los números de las listas ordenadas pasa algo similar, solo que esta vez hay que añadir el contador de la lista */
+            ol {
+                list-style: none;
+                counter-reset: li;
+            }
+            ol li::before {
+                content: counter(li);
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+                color:purple;
+                font-weight: bold;
+            }
+            li {
+                counter-increment: li;
+            }
+            img {
+                height: 100%;
+                width: 100%;
+            }
+            
+            #receta {
+                position: relative;
+                z-index: 0;
+            }
+            /* Posicionamos el texto relativo a la imagen, superpuesto (z-index) y con un ligero fondo blanco
+                además le aádimos un margen en el lado derecho */
+            #textoReceta {
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+                z-index: 1;
+                background-color: white;
+                opacity: 0.6;
+                margin-right: 30%;
+            }
+            /* Incluimos 3 columnas con una separación entre ellas de 30px */
+            .columnas {
+                column-count: 3;
+                column-gap: 50px;
+            }
+            /* Decoramos el título */
+            h2 {
+                font: bold small-caps 3em fantasy;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="receta">
+            <img src="merluza.jpg" alt="imagen de cuatro rodajas de merluza en salsa de naranja">
+            <div id="textoReceta">
+                <h2>Merluza en salsa de jenjibre y naranja</h2>
+                
+                <div class="columnas">
+                    <p>
+                        Dificultad: <b>media</b> Preparación: <b>85 min.</b><br>
+                        Calorías: <b>250</b> Congelar: <b>no</b>
+                    </p>
+                    <span>PARA 6 PERSONAS</span>
+                    <ul>
+                        <li>4 tajadas de merluza de 200g cada una</li>
+                        <li>1 cebolla pequeña picada</li>
+                        <li>3 dientes de ajo majados</li>
+                        <li>Aceite de olica</li>
+                        <li>El zumo de 5 naranjas</li>
+                        <li>El zumo de 1 limón</li>
+                        <li>Un dado de 3cm de jenjibre pelado</li>
+                        <li>2 naranjas</li>
+                        <li>semillas de sésamo</li>
+                        <li>30g de mantequilla</li>
+                    </ul>
+                
+                    <ol>
+                        <li><b>En una sartén de fondo</b> grueso con aceite, saltea la cebolla y el ajo en un poco de aceite de oliva hasta que queden translúcidos.</li>
+                        <li><b>Añade el zumo de naranja,</b> el de limón y el jenjibre rallado (que los zumos estén bien colados).</li>
+                        <li><b>Lleva a ebullición</b> y, cuando hierva, baja el fuego y cocina a fuego lento durante una hora hassta que reduzca una tercera parte.</li>
+                    
+                        <li><b>Corta las otras 2 naranjas</b> en rodajas y, luego, en mitades. En una sartén, funde la mantequilla y dora las naranjas en ella.</li>
+                        <li><b>En otra sartén</b> antiadherente, pasa las tajadas de merluza con un poco de aceite a fuego medio, 2 minutos por cada lado, hasta que quede al punto que tu quieras.</li>
+                        <li><b>Sirve la merluza</b> napada con la salsa y acompañada de la naranja y las semillas de sésamo.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        
+    </body>
+</html>
